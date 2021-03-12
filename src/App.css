@@ -1,10 +1,27 @@
 * {
   margin: 0;
 }
+body {
+  background-color:burlywood;
+}
 
 .app__header{
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   justify-content: space-evenly;
+  color:brown;
+}
+
+.app__stats{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.MuiCardContent-root:last-child {
+  padding-bottom: 25px;
+}
+
+.MuiCardContent-root {
+  padding: 36px;
 }

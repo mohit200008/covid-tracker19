@@ -4,12 +4,12 @@ import {
   FormControl,
   Select,
 } from "@material-ui/core";
+import InfoBox from './InfoBox';
 import './App.css';
 
 function App() {
-  const [countries,setCountries]=useState([
-    'USA','UK','INDIA'
-  ]);
+  const [countries,setCountries]=useState([]);
+  const [country,setCountry]= useState('worldwide');
   // STATE= how to write a variable in react <<<<<<< 
 
   // https://disease.sh/v3/covid-19/countries
@@ -39,12 +39,21 @@ function App() {
     getCountriesData();
 
   },[]);
+
+  const onCountryChange= (event) => {
+    const countryCode=event.target.value;
+
+    console.log("Y00000 >>>>>>",countryCode);
+
+    setCountry(countryCode);
+  }
   return (
     <div className="app">
     <div className="app__header">
-    <h1>COVID-TRACKER-19</h1>
+    <h1>COVINFO(COVID-TRACKER)</h1>
     <FormControl class="app__dropdown">
-    <Select variant="outlined" value="abc">
+    <Select variant="outlined" onChange={onCountryChange} value={country}>
+    <MenuItem value="worldwide">Worldwide</MenuItem>
     {/*Loop through all the countries and show a dropdown list of all options */}
     {
       countries.map(country=> (
@@ -62,11 +71,16 @@ function App() {
     </FormControl>
    
     </div>
-  {/* Header */}
-  {/* Title + Select input dropdown field */}
+  <div className="app__stats">
+  <InfoBox title="Coronavirus Cases" cases={123} total={2000} />
+
+  <InfoBox title="Recovered" cases={1234} total={3000}/>
+
+  <InfoBox title="Deaths" cases={12345} total={4000}/>
+  {/* InfoBox title="Coronavirus cases" */}
+  {/* InfoBox title="Coronavirus recoveries"*/}
   {/* InfoBox */}
-  {/* InfoBox */}
-  {/* InfoBox */}
+  </div>
   {/* Table */}
   {/* Graph */}
   {/* Map */}
