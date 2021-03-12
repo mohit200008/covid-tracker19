@@ -2,7 +2,12 @@
   margin: 0;
 }
 body {
-  background-color:burlywood;
+  background-color:gainsboro;
+}
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
 }
 
 .app__header{
@@ -11,6 +16,9 @@ body {
   margin-bottom: 20px;
   justify-content: space-evenly;
   color:brown;
+}
+.app__left {
+  flex: 0.9;
 }
 
 .app__stats{
@@ -24,4 +32,10 @@ body {
 
 .MuiCardContent-root {
   padding: 36px;
+}
+
+@media (max-width:990px) {
+  .app {
+    flex-direction: column;
+  }
 }

@@ -3,8 +3,11 @@ import {
   MenuItem,
   FormControl,
   Select,
+  CardContent,
+  Card
 } from "@material-ui/core";
 import InfoBox from './InfoBox';
+import Map from "./Map";
 import './App.css';
 
 function App() {
@@ -49,6 +52,7 @@ function App() {
   }
   return (
     <div className="app">
+    <div className="app__left">
     <div className="app__header">
     <h1>COVINFO(COVID-TRACKER)</h1>
     <FormControl class="app__dropdown">
@@ -84,9 +88,21 @@ function App() {
   {/* Table */}
   {/* Graph */}
   {/* Map */}
+  <Map/>
+
 
     
      
+    </div>
+    <Card className="app__right">
+    <CardContent>
+    <h3>Live cases by Country</h3>
+    {/* Table */}
+    <h3>WorldWide new cases</h3>
+    {/* Graph */}
+
+    </CardContent>
+    </Card>
     </div>
   );
 }
