@@ -4,13 +4,13 @@ import {
   FormControl,
   Select,
   CardContent,
-  Card,
-  Table
+  Card
 } from "@material-ui/core";
 import InfoBox from './InfoBox';
 import Map from "./Map";
 import './App.css';
 import Table from "./Table";
+
 
 function App() {
   const [countries,setCountries]=useState([]);

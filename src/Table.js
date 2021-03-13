@@ -1,8 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function Table(countries) {
-    return (
-        <div className="table">
+function Table({countries}) {
+    return <div className="table">
          {countries.map(({country,cases})=>(
              <tr>
              <td>{country}</td>
@@ -11,7 +10,6 @@ function Table(countries) {
 
          ))}
         </div>
-    );
 }
 
 export default Table;
