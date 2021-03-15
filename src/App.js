@@ -10,6 +10,7 @@ import InfoBox from './InfoBox';
 import Map from "./Map";
 import './App.css';
 import Table from "./Table";
+import Footer from "./footer";
 import { sortData, prettyPrintStat } from "./util";
 import LineGraph from "./LineGraph";
 import "leaflet/dist/leaflet.css";
@@ -115,14 +116,19 @@ function App() {
     </div>
   <div className="app__stats">
   <InfoBox 
+  isRed
+  active= {casesType=== "cases"}
   onClick={e=> setCasesType('cases')}
   title="Coronavirus Cases" cases={prettyPrintStat(countryInfo.todayCases)} total={prettyPrintStat(countryInfo.cases)} />
 
   <InfoBox 
+  active= {casesType=== "recovered"}
   onClick={e=> setCasesType('recovered')}
   title="Recovered" cases={prettyPrintStat(countryInfo.todayRecovered)} total={prettyPrintStat(countryInfo.recovered)}/>
 
-  <InfoBox 
+  <InfoBox
+  isRed 
+  active= {casesType=== "deaths"}
   onClick={e=> setCasesType('deaths')}
   title="Deaths" cases={prettyPrintStat(countryInfo.todayDeaths)} total={prettyPrintStat(countryInfo.deaths)}/>
   {/* InfoBox title="Coronavirus cases" */}
@@ -147,12 +153,17 @@ function App() {
     <h3>Live cases by Country</h3>
     {/* Table */}
     <Table countries={tableData} />
-    <h3>WorldWide new cases</h3>
-    <LineGraph casesType={casesType} />
+    <h3 className="app__graphTitle">WorldWide new {casesType}</h3>
+    <LineGraph className="app__graph" casesType={casesType} />
     {/* Graph */}
 
+
+   
+
     </CardContent>
+     <Footer />
     </Card>
+    
     </div>
   );
 }

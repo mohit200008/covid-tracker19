@@ -25,6 +25,22 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
+.app__right {
+  display: flex;
+  flex-direction: column;
+}
+.app__right .MuiCardContent-root{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.app__graph {
+  flex-grow: 1;
+}
+.app__graphTitle{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .MuiCardContent-root:last-child {
   padding-bottom: 25px;

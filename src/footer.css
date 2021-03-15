@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,700;1,500&display=swap');
+
+.main-footer {
+    color: white;
+    background-color:brown;
+    padding-top: 15px;
+    position:-webkit-sticky;
+    border-radius: 11px;
+    bottom: 0;
+    margin-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+  }
+.list-unstyled{
+    list-style: none;
+}  
